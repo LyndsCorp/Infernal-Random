@@ -1,0 +1,29 @@
+# random.fire
+# Infernal Random
+# Copyright (C) 2026 David Baña Szymaniak
+# MIT License
+
+#--------------------------------------- Funciones de enteros
+
+# int aleatorio
+function randint(int x, int y)
+    if x > y then
+        print(color("red") + "El mínimo no puede ser mayor que el máximo")
+        exit(2)
+    fi
+
+    local int resultado = shuf -i $x-$y -n 1
+    return int resultado
+fi
+
+# Alias para int aleatorio
+function randomint(int x, int y)
+    return int randint(x, y)
+fi
+#---------------------------------------
+
+# Decimales aleatorios para float
+function random()
+    int n = shuf -i 0-999999 -n 1
+    return float n / 1000000.0
+fi
